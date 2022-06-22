@@ -23,10 +23,11 @@ FROM [Production].[Product]
 WHERE [Color] IS NOT NULL
 
 -- Problem 6
-SELECT 'NAME:' + [Name] + ' -- COLOR:'+ [Color] as [Name Color]
+SELECT TOP(6) 'NAME:' + [Name] + ' -- COLOR:'+ [Color] as [Name Color]
 FROM [Production].[Product]
-WHERE [Name] IN ('LL Crankarm ', 'ML Crankarm', 'HL Crankarm','Chainring Bolts', 'Chainring Nut', 'Chainring' )
-    AND [Color] IN ('Black', 'Silver')
+WHERE [Color] IS NOT NULL
+-- WHERE [Name] IN ('LL Crankarm ', 'ML Crankarm', 'HL Crankarm','Chainring Bolts', 'Chainring Nut', 'Chainring' )
+--     AND [Color] IN ('Black', 'Silver')
 
 -- Problem 7
 SELECT [ProductID], [Name]
