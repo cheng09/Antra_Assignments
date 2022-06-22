@@ -18,12 +18,12 @@ FROM [Production].[Product]
 WHERE [Color] IS NOT NULL AND [ListPrice] > 0
 
 -- Problem 5
-SELECT [Name] + ' ' + [Color] AS [Name Color]
+SELECT CONCAT([Name], [Color]) AS [Name Color]
 FROM [Production].[Product]
 WHERE [Color] IS NOT NULL
 
 -- Problem 6
-SELECT [Name], [Color]
+SELECT 'NAME:' + [Name] + ' -- COLOR:'+ [Color] as [Name Color]
 FROM [Production].[Product]
 WHERE [Name] IN ('LL Crankarm ', 'ML Crankarm', 'HL Crankarm','Chainring Bolts', 'Chainring Nut', 'Chainring' )
     AND [Color] IN ('Black', 'Silver')
