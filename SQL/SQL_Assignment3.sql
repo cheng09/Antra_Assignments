@@ -123,6 +123,7 @@ WHERE MONTH (e.BirthDate) = 2
 
 
 -- Problem 6
-SELECT * FROM dbo.Employees
-MINUS 
-SELECT * FROM dbo.Employees
+SELECT (CASE WHEN COUNT(*) = 0 THEN 'True' ELSE 'False' END) [IsSame]
+FROM  dbo.Employees e1 full JOIN
+     dbo.Employees e2 ON e1.EmployeeID = e2.EmployeeID
+WHERE e1.EmployeeID IS NULL OR e2.EmployeeID IS NULL
