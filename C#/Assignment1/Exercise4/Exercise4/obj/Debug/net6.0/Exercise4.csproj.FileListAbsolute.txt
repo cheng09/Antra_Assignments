@@ -1,0 +1,15 @@
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/bin/Debug/net6.0/Exercise4
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/bin/Debug/net6.0/Exercise4.deps.json
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/bin/Debug/net6.0/Exercise4.runtimeconfig.json
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/bin/Debug/net6.0/Exercise4.dll
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/bin/Debug/net6.0/Exercise4.pdb
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.csproj.AssemblyReference.cache
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.AssemblyInfoInputs.cache
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.AssemblyInfo.cs
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.csproj.CoreCompileInputs.cache
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.dll
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/refint/Exercise4.dll
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.pdb
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/Exercise4.genruntimeconfig.cache
+/Users/chengzhang/Documents/GitHub/Antra_Assignments/C#/Assignment1/Exercise4/Exercise4/obj/Debug/net6.0/ref/Exercise4.dll

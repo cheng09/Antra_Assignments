@@ -3,11 +3,22 @@ SELECT cr.[Name] AS [Country], sp.[Name] AS [Province]
 FROM person.[CountryRegion] AS cr JOIN person.[StateProvince] AS sp 
     ON cr.[CountryRegionCode] = sp.[CountryRegionCode]
 
+-- answer
+SELECT c.Name AS Country, s.Name AS Province  
+FROM Person.CountryRegion c  JOIN Person.StateProvince s 
+    ON c.CountryRegionCode = s.CountryRegionCode;
+
 -- Problem 2
 SELECT cr.[Name] AS [Country], sp.[Name] AS [Province]
 FROM person.[CountryRegion] AS cr JOIN person.[StateProvince] AS sp 
     ON cr.[CountryRegionCode] = sp.[CountryRegionCode]
 WHERE cr.[Name] IN ('Germany', 'Canada')
+
+-- answer
+SELECT c.Name AS Country, s.Name AS Province  
+FROM Person.CountryRegion c  JOIN Person.StateProvince s 
+    ON c.CountryRegionCode = s.CountryRegionCode 
+WHERE c.Name NOT IN ('Germany', 'Canada');
 
 -- Problem 3
 SELECT DISTINCT p.[ProductID], p.[ProductName], p.[UnitPrice]
@@ -141,24 +152,33 @@ Having COUNT(cp.[City]) >= 2
 -- Problem 19
 WITH customer_product
 AS (
-    SELECT TOP 5 p.[ProductID], AVG(p.[UnitPrice]) AS [AvgPrice], 
+    SELECT TOP 5 od.[ProductID], AVG(od.[UnitPrice]) AS [AvgPrice], 
     ROW_NUMBER() OVER(ORDER BY SUM(od.[Quantity]) DESC) AS [RN]
-    FROM dbo.[Customers] AS c JOIN dbo.[Orders] AS o ON o.[CustomerID] = c.[CustomerID]
-        JOIN dbo.[Order Details] AS od ON o.[OrderID] = od.[OrderID]
-        JOIN dbo.[Products] AS p ON od.[ProductID] = p.[ProductID]
-    GROUP BY p.[ProductID]
+    FROM dbo.[Order Details] AS od 
+    GROUP BY od.[ProductID]
 )
 
-SELECT p.[ProductName], cp2.[AvgPrice], dt.[City]
+SELECT p.[ProductID], cp2.[AvgPrice], dt.[City]
 FROM (
-SELECT TOP 5 c.[City] AS [City], ROW_NUMBER() OVER(ORDER BY SUM(od.[Quantity]) DESC) AS [RN]
-FROM [customer_product] AS cp JOIN dbo.[Order Details] AS od ON od.[ProductID] = cp.[ProductID]
+    SELECT TOP 5 c.[City] AS [City], ROW_NUMBER() OVER(ORDER BY SUM(od.[Quantity]) DESC) AS [RN]
+    FROM [customer_product] AS cp JOIN dbo.[Order Details] AS od ON od.[ProductID] = cp.[ProductID]
     JOIN dbo.[Orders] AS o ON o.[OrderID] = od.[OrderID]
     JOIN dbo.[Customers] AS c ON o.[CustomerID] = c.[CustomerID]
-GROUP BY c.[City]
+    GROUP BY c.[City]
 ) AS dt JOIN [customer_product] AS cp2 ON dt.[RN] = cp2.[RN] 
 JOIN dbo.[Products] AS p ON cp2.[ProductID] = p.[ProductID]
 ORDER BY cp2.[AvgPrice]
+
+select top 5 ProductID, AVG(UnitPrice) as AvgPrice,
+    (select top 1 City 
+    from Customers c join Orders o on o.CustomerID=c.CustomerID 
+        join [Order Details] od2 on od2.OrderID=o.OrderID 
+    where od2.ProductID=od1.ProductID 
+    group by city 
+    order by SUM(Quantity) desc) as City 
+from [Order Details] od1 
+group by ProductID  
+order by sum(Quantity) desc
 
 -- Problem 20
 SELECT dt.[City]

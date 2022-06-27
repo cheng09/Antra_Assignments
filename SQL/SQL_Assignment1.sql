@@ -53,7 +53,9 @@ ORDER BY [Name]
 -- Problem 11
 SELECT [Name]
 FROM [Production].[Product]
-WHERE [Name] LIKE ('SPO%') AND [Name] NOT LIKE ('SPOK%')
+-- WHERE [Name] LIKE ('SPO%') AND [Name] NOT LIKE ('SPOK%')
+-- ORDER BY [Name]
+WHERE [Name] LIKE 'spo[^k]%' 
 ORDER BY [Name]
 
 -- Problem 12
