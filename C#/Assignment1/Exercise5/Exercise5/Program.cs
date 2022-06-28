@@ -1,4 +1,6 @@
-﻿// 1. String reverse
+﻿using System.Text;
+using System.Collections;
+// 1. String reverse
 Console.WriteLine("Input your string");
 
 string input = Console.ReadLine();
@@ -16,7 +18,7 @@ for (int i = input.Length - 1; i >= 0; i--)
 
 // 2. Reverse sentence without changing the punctuation and spaces
 
-using System.Text;
+
 
 char[] pun = new char[] { '/', ':', ';', '.', ',', '=', '(', ')', '&',
     '[', ']', '\\', '/', '!', '?'};
@@ -55,8 +57,8 @@ static string getPostfix(string s, char[] pun)
     return sb.ToString();
 }
 
-string input = "The quick brown fox jumps over the lazy dog /Yes! Really!!!/.";
-string[] split = input.Split(" ");
+string test = "The quick brown fox jumps over the lazy dog /Yes! Really!!!/.";
+string[] split = test.Split(" ");
 
 string[] res = new string[split.Length];
 
@@ -106,7 +108,6 @@ Console.WriteLine(string.Join(" ", res));
 
 // 3. Extract all unique plindromes substring in a sentence
 
-using System.Collections;
 
 static string getAllPlindromes(string s)
 {
@@ -152,8 +153,8 @@ static int plindromeLength(string s, int l, int r)
     return r - l - 2;
 }
 
-string input = "Hi,exe? ABBA! Hog fully a string: ExE. Bob";
-Console.WriteLine(getAllPlindromes(input));
+string input_t = "Hi,exe? ABBA! Hog fully a string: ExE. Bob";
+Console.WriteLine(getAllPlindromes(input_t));
 
 // 4. Parse an URL
 
@@ -168,5 +169,5 @@ static void parseURL(string input)
     Console.WriteLine("[resource] = " + "\"" + sp[1] + "\"");
 }
 
-string input = "https://www.apple.com/iphone";
-parseURL(input);
+string input_url = "https://www.apple.com/iphone";
+parseURL(input_url);
